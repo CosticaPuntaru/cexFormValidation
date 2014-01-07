@@ -1,9 +1,9 @@
 {
     "directory": "app/bower_components",
     "registry": {
-        "register": "http://10.0.10.128/registry",
+        "register": "http://localhost/registry",
         "search": [
-            "http://10.0.10.128/registry",
+            "http://localhost/registry",
             "http://bower.herokuapp.com"
         ]
     }
