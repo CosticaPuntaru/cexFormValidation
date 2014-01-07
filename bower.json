@@ -2,6 +2,7 @@
   "name": "myComponent",
   "version": "0.0.1",
   "author": "arcade",
+  "category": "typography",
   "dependencies": {
     "angular": "~1.2.0",
     "json3": "~3.2.4",
