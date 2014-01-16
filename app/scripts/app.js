@@ -1,9 +1,9 @@
 /**
  * Created by pc on 12/13/13.
  */
-angular.module('cexFormValidation',[]);
+var app = angular.module('cexFormValidation',[]);
 
-angular.module('cexFormValidation').directive('elementAlert', function () {
+app.directive('elementAlert', function () {
 
 	if(!String.prototype.capitalize )
 		String.prototype.capitalize = function() {
@@ -84,9 +84,8 @@ angular.module('cexFormValidation').directive('elementAlert', function () {
 						$scope.alert.remove();
 					}
 
-					$scope.alert = angular.element('<div ">'+currentErrorMessage+'</div>');
-
-					$scope.alert.css({'position':'absolute','margin-top': - $el.outerHeight()-$el.outerHeight()/2 +3, 'margin-left':$el.outerWidth()}).addClass('input-validation-error');
+					$scope.alert = angular.element('<div">'+currentErrorMessage+'</div>');
+					$scope.alert.css({'position':'absolute','margin-top': $el.offsetTop + $el.offsetHeight-$el.offsetHeight/2 +3, 'margin-left': $el.offsetLeft +$el.offsetWidth}).addClass('input-validation-error');
 					$el.after($scope.alert);
 				}
 				$scope.$on('hideErrors',function(){
