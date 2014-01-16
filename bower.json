@@ -1,7 +1,7 @@
 {
   "name": "cexFormValidation",
   "version": "0.0.1",
-  "author": "arcade",
+  "author": "Costica Puntaru",
   "category": "Forms",
   "dependencies": {
     "angular": "~1.2.0",
