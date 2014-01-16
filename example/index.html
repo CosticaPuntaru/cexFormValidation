@@ -1,7 +1,16 @@
-<div ng-app="foo">
-    <div ng-controller="FooController">
-        <ul>
-            <li ng-repeat="framework in frameworks">{{framework}}</li>
-        </ul>
-    </div>
-</div>
+<h2 class="form-signin-heading">Register new account</h2>
+<form method="post"  novalidate class="css-form"  id="form-login" name="RegForm" ng-controller="RegisterForm" >
+	<input blacklist-nc="admin,tester,tica"  ng-required element-alert ng-minlength="2" type="text" class="input-block-level" id="registerFirst" name="registerFirst" placeholder="First Name" ng-model="datas.register.first">
+	<input ng-required element-alert ng-minlength="2" type="text" class="input-block-level" id="registerLast" name="registerLast" placeholder="Last Name" ng-model="datas.register.last">
+	<input ng-required element-alert unique-on-server="checkemails.php?val=" type="email" class="input-block-level" id="registerEmail" name="registerEmail" placeholder="Email address" ng-model="datas.register.email">
+	<input ng-required element-alert="{order : ['required','minLength','PhoneNumber'], visible :'3'}" required ng-minlength="3" phone-number   type="text" class="input-block-level"  id="registerPhone"  name="registerPhone" placeholder="Phone" ng-model="datas.register.phone" >
+	<input ng-required element-alert ng-minlength="3" type="password" class="input-block-level"  id="registerPass"  name="registerPass" placeholder="Password" ng-model="datas.register.pass" >
+	<input ng-required type="password" class="input-block-level"  id="retryPass" name="retryPass" placeholder="Retype Password" ng-model="datas.register.retrypass" >
+	<input ng-required element-alert type="text" datepicker-popup="{{format}}" ng-model="datas.register.birthDate" is-open="opened" id="birthDate" name="birthDate"  placeholder="Birth date" show-weeks="false" close-text="Close" />
+	<div class="checkbox">
+		<label>
+			<input ng-required="value.length==0"  element-alert type="checkbox" id="aggreeWithThers" name="aggreeWithThers" value="i agree">I agree with the <a href="#">Terms and conditions</a>.
+		</label>
+	</div>
+	<button class='btn' ng-click="register(datas.register)" ng-disabled="RegForm.$invalid">Register</button>
+</form>
