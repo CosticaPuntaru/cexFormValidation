@@ -15,7 +15,7 @@
   "example": {
       "js": "example/main.js",
       "html": "example/index.html"
-   }
+   },
   "entryPoints":{
 	  "js":"app/scripts/app.js",
 	  "css":"app/styles/main.css"
